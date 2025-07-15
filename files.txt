@@ -1,0 +1,74 @@
+urban_air_quality_monitoring/
+├── data/
+│   ├── raw/                     # Raw data downloaded from APIs
+│   ├── processed/               # Cleaned and processed datasets
+│   ├── external_apis/           # Scripts or configs related to API calls
+│   ├── download_data.sh         # Shell script to fetch data from APIs
+│   └── README.md
+├── docker-compose.yaml          # Compose file for local containers (API, DB, etc.)
+├── Dockerfile                   # For containerizing Flask API or training
+├── k8s/                        # Kubernetes manifests (deployments, services, jobs)
+│   ├── api-deployment.yaml
+│   ├── db-deployment.yaml
+│   ├── train-job.yaml
+│   ├── ingress.yaml
+│   └── namespace.yaml
+├── models/
+│   ├── artifacts/               # Saved model checkpoints and weights
+│   ├── features/                # Feature sets used for training/inference
+│   ├── explainability/          # SHAP values, plots, etc.
+│   └── README.md
+├── notebooks/
+│   ├── 01_data_ingestion.ipynb
+│   ├── 02_eda_feature_engineering.ipynb
+│   ├── 03_clustering.ipynb
+│   ├── 04_model_training.ipynb
+│   ├── 05_model_explainability.ipynb
+│   └── README.md
+├── reports/
+│   ├── data_drift_report.html
+│   ├── model_performance_report.html
+│   ├── monitoring_dashboard.md
+│   └── README.md
+├── requirements.txt
+├── scripts/
+│   ├── fetch_data.sh           # Fetch & update raw data
+│   ├── preprocess_data.sh      # Data cleaning pipeline
+│   ├── retrain_model.sh        # Trigger model retraining
+│   ├── deploy_k8s.sh           # Deploy Kubernetes manifests
+│   └── monitor.sh              # Launch monitoring services
+├── src/
+│   ├── api/                    # Flask API backend
+│   │   ├── __init__.py
+│   │   ├── main.py
+│   │   ├── routes.py
+│   │   └── utils.py
+│   ├── config/                 # Config files and AWS integrations
+│   │   ├── aws.py
+│   │   ├── settings.yaml
+│   │   └── __init__.py
+│   ├── data/                   # Data ingestion & preprocessing code
+│   │   ├── ingestion.py
+│   │   ├── processing.py
+│   │   └── utils.py
+│   ├── db/                     # Database connection and queries
+│   │   ├── connection.py
+│   │   ├── queries.sql
+│   │   └── __init__.py
+│   ├── model/                  # Model training, inference, explainability
+│   │   ├── train.py
+│   │   ├── inference.py
+│   │   ├── explain.py
+│   │   └── __init__.py
+│   ├── monitoring/             # Drift detection, retraining triggers, logs
+│   │   ├── drift_detection.py
+│   │   ├── retrain_trigger.py
+│   │   └── __init__.py
+│   └── README.md
+├── tests/
+│   ├── integration/
+│   └── unit/
+├── flutter_app/                # Flutter frontend project folder
+│   ├── lib/
+│   └── pubspec.yaml
+└── README.md
